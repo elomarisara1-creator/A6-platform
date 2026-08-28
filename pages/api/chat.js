@@ -59,6 +59,6 @@ Be precise about: Article 6.2 (bilateral cooperative approaches), Article 6.4 (S
 
     return res.status(200).json(parsed);
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    return res.status(500).json({ error: error.message }); 
   }
 }
