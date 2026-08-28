@@ -39,7 +39,7 @@ Be precise about: Article 6.2 (bilateral cooperative approaches), Article 6.4 (S
   };
 
   try {
-    const MODEL = "gemini-2.0-flash-lite";
+    const MODEL = "gemini-2.0-flash";
     const URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${process.env.GEMINI_API_KEY}`;
 
     const response = await fetch(URL, {
