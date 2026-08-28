@@ -39,10 +39,14 @@ Be precise about: Article 6.2 (bilateral cooperative approaches), Article 6.4 (S
   };
 
   try {
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
-      { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }
-    );
+    const MODEL = "gemini-2.0-flash-lite";
+    const URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${process.env.GEMINI_API_KEY}`;
+
+    const response = await fetch(URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
 
     const data = await response.json();
 
@@ -59,6 +63,6 @@ Be precise about: Article 6.2 (bilateral cooperative approaches), Article 6.4 (S
 
     return res.status(200).json(parsed);
   } catch (error) {
-    return res.status(500).json({ error: error.message }); 
+    return res.status(500).json({ error: error.message });
   }
 }
