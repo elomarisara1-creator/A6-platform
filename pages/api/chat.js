@@ -39,7 +39,7 @@ export default async function handler(req, res) {
   const payload = {
     system_instruction: { parts: [{ text: systemPrompt }] },
     contents: [...history, { role: 'user', parts: [{ text: last.content }] }],
-    generationConfig: { temperature: 0.2, maxOutputTokens: 1000 }
+    generationConfig: { temperature: 0.2, maxOutputTokens: 600 }
   };
 
   try {
